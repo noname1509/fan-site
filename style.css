@@ -1,16 +1,9 @@
 /* Этот код применяется ко всей странице */
 body {
-    /* === ИЗМЕНЕНИЯ ЗДЕСЬ === */
-    background-color: #111111; /* Темный фон (на случай, если текстура не загрузится) */
-    
-    /* Мы добавляем ссылку на бесплатную, бесшовную текстуру */
+    background-color: #111111; 
     background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dark-denim.png');
-    
-    /* Говорим браузеру "мостить" (повторять) эту текстуру */
     background-repeat: repeat; 
-    /* === КОНЕЦ ИЗМЕНЕНИЙ === */
-
-    color: #FFFFFF;           /* Белый цвет текста */
+    color: #FFFFFF;           
     font-family: 'Roboto', sans-serif; 
     line-height: 1.6;          
     margin: 0; 
@@ -163,6 +156,31 @@ nav a.current-page {
 .hero-content p {
     font-size: 1.5rem; 
     margin-top: 5px;
+}
+
+
+/* ============================================== */
+/* === НОВЫЙ БЛОК: Стили для Видео (Tрейлеры) === */
+/* ============================================== */
+
+.video-wrapper {
+    position: relative;
+    /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-top: 20px; /* Отступ сверху от описания */
+    border-radius: 8px; /* Скруглим углы, как у карточек */
+    border: 1px solid #333;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Убираем рамку по умолчанию у iframe */
 }
 
 
