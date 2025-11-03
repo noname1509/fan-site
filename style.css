@@ -1,20 +1,29 @@
 /* Этот код применяется ко всей странице */
 body {
-    background-color: #111111; /* Темный фон */
+    /* === ИЗМЕНЕНИЯ ЗДЕСЬ === */
+    background-color: #111111; /* Темный фон (на случай, если текстура не загрузится) */
+    
+    /* Мы добавляем ссылку на бесплатную, бесшовную текстуру */
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dark-denim.png');
+    
+    /* Говорим браузеру "мостить" (повторять) эту текстуру */
+    background-repeat: repeat; 
+    /* === КОНЕЦ ИЗМЕНЕНИЙ === */
+
     color: #FFFFFF;           /* Белый цвет текста */
-    font-family: 'Roboto', sans-serif; /* НАШ НОВЫЙ ШРИФТ */
+    font-family: 'Roboto', sans-serif; 
     line-height: 1.6;          
-    margin: 0; /* Убираем отступы по умолчанию */
-    padding: 0; /* Убираем отступы по умолчанию */
+    margin: 0; 
+    padding: 0; 
 }
 
 /* Стилизуем главный заголовок */
 h1 {
-    color: #E50914; /* Фирменный красный цвет (как у Netflix) */
-    text-align: center;   /* Выравниваем по центру */
+    color: #E50914; 
+    text-align: center;   
     font-size: 3rem;      
-    font-family: 'Bangers', cursive; /* НАШ НОВЫЙ ШРИФТ */
-    letter-spacing: 2px; /* Немного раздвигаем буквы */
+    font-family: 'Bangers', cursive; 
+    letter-spacing: 2px; 
 }
 
 /* СТИЛИ для всех заголовков h2, h3 */
@@ -25,91 +34,82 @@ h2, h3 {
 
 /* Весь основной контент (main) немного сузим и отцентрируем */
 main {
-    max-width: 800px; /* Максимальная ширина - 800 пикселей */
-    margin: 20px auto;  /* Отступы: 20px сверху/снизу и 'auto' по бокам (это центрирует) */
-    padding: 20px;    /* Внутренние отступы, чтобы текст не прилипал к краям */
-    box-sizing: border-box; /* Добавляем, чтобы padding не ломал ширину */
+    max-width: 800px; 
+    margin: 20px auto;  
+    padding: 20px;    
+    box-sizing: border-box; 
 }
 
 /* Подвал (footer) */
 footer {
-    text-align: center; /* Выравниваем текст по центру */
-    margin-top: 40px;   /* Отступ сверху, чтобы отделить от контента */
-    color: #777;       /* Серый цвет текста */
+    text-align: center; 
+    margin-top: 40px;   
+    color: #777;       
     padding-bottom: 20px;
 }
 
 /* --- Стили для Навигации --- */
 
 nav {
-    background-color: #222; /* Слегка сероватый фон для меню */
-    padding: 10px 0;         /* Небольшой внутренний отступ сверху и снизу */
+    background-color: #222; 
+    padding: 10px 0;         
 }
 
-/* Стили для самого списка <ul> */
 nav ul {
-    list-style-type: none; /* Убираем маркеры-точки */
-    padding: 0;            /* Убираем отступы по умолчанию */
-    margin: 0;             /* Убираем отступы по умолчанию */
-    text-align: center;    /* Центрируем список */
+    list-style-type: none; 
+    padding: 0;            
+    margin: 0;             
+    text-align: center;    
 }
 
-/* Стили для элементов списка <li> */
 nav li {
-    display: inline-block; /* Отображаем элементы в одну строку */
-    margin: 0 15px;      /* Добавляем отступы между ссылками */
+    display: inline-block; 
+    margin: 0 15px;      
 }
 
-/* Стили для самих ссылок <a> */
 nav a {
-    text-decoration: none; /* Убираем подчеркивание у ссылок */
-    color: #FFFFFF;        /* Белый цвет текста */
-    font-size: 1.1rem;     /* Чуть крупнее шрифт */
-    font-weight: bold;     /* Делаем жирным (для 'Roboto' это важно) */
-    transition: color 0.3s ease; /* Добавляем плавный переход */
+    text-decoration: none; 
+    color: #FFFFFF;        
+    font-size: 1.1rem;     
+    font-weight: bold;     
+    transition: color 0.3s ease; 
 }
 
-/* Эффект при наведении мыши на НЕактивную ссылку */
 nav a:not(.current-page):hover {
-    color: #E50914; /* При наведении ссылка становится красной */
+    color: #E50914; 
 }
 
-/* Стиль для активной (текущей) страницы */
 nav a.current-page {
-    color: #E50914; /* Делаем активную ссылку красной */
-    cursor: default; /* Показываем, что на нее не нужно нажимать */
+    color: #E50914; 
+    cursor: default; 
 }
 
 /* --- Стили для страницы Персонажей --- */
 
-/* Контейнер-сетка для карточек */
 .characters-grid {
-    display: flex;       /* Включаем Flexbox-магию */
-    flex-wrap: wrap;     /* Позволяем карточкам переноситься на новую строку */
-    justify-content: center; /* Центрируем карточки по горизонтали */
-    gap: 20px;           /* Пространство (зазор) между карточками */
+    display: flex;       
+    flex-wrap: wrap;     
+    justify-content: center; 
+    gap: 20px;           
 }
 
-/* Стили для отдельной карточки персонажа */
 .character-card {
-    background-color: #222;  /* Тот же фон, что и у меню */
-    border: 1px solid #333; /* Еле заметная рамка */
-    border-radius: 8px;     /* Скругленные углы */
-    width: 300px;           /* Фиксированная ширина карточки */
-    padding: 15px;          /* Внутренние отступы */
-    text-align: center;     /* Текст по центру */
+    background-color: #222;  
+    border: 1px solid #333; 
+    border-radius: 8px;     
+    width: 300px;           
+    padding: 15px;          
+    text-align: center;     
     box-sizing: border-box; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Эффект при наведении мыши на карточку */
 .character-card:hover {
     transform: scale(1.05); 
     box-shadow: 0 0 15px rgba(229, 9, 20, 0.5); 
 }
 
 
-/* Стили для картинки внутри карточки */
 .character-card img {
     max-width: 100%;    
     height: auto;       
@@ -117,7 +117,6 @@ nav a.current-page {
     margin-bottom: 10px; 
 }
 
-/* Стили для имени персонажа (заголовок <h3>) */
 .character-card h3 {
     color: #E50914; 
     margin-top: 0;
@@ -133,7 +132,6 @@ nav a.current-page {
     border-radius: 0 5px 5px 0; 
 }
 
-/* Стили для заголовка внутри блока */
 .season-block h3 {
     margin-top: 0; 
     color: #f0f0f0; 
@@ -222,11 +220,11 @@ nav a.current-page {
 
 
 /* ============================================== */
-/* === НОВЫЙ БЛОК: Хлебные крошки (Breadcrumbs) === */
+/* === Хлебные крошки (Breadcrumbs) === */
 /* ============================================== */
 
 .breadcrumbs {
-    margin-bottom: 20px; /* Отступ под крошками, перед h2 */
+    margin-bottom: 20px; 
     font-size: 0.9rem;
 }
 
@@ -237,19 +235,17 @@ nav a.current-page {
 }
 
 .breadcrumbs li {
-    display: inline; /* Ставим в ряд */
+    display: inline; 
 }
 
-/* Разделитель '>' */
 .breadcrumbs li + li::before {
     content: ' > ';
     margin: 0 8px;
-    color: #777; /* Серый цвет для разделителя */
+    color: #777; 
 }
 
-/* Ссылки в крошках */
 .breadcrumbs a {
-    color: #ccc; /* Светло-серый, чтобы не спорить с меню */
+    color: #ccc; 
     text-decoration: none;
 }
 
@@ -257,8 +253,7 @@ nav a.current-page {
     text-decoration: underline;
 }
 
-/* Текущая страница (последний элемент) */
 .breadcrumbs li[aria-current="page"] {
-    color: #FFFFFF; /* Белый цвет, как обычный текст */
+    color: #FFFFFF; 
     font-weight: bold;
 }
